@@ -1,5 +1,5 @@
 import React, { Reducer } from 'react'
-import { ActionType, Middleware, PureAction } from './context'
+import { ActionType, Middleware } from 'app/shared/store/context'
 
 
 export const functionMiddleWare: Middleware = (dispatch, action) => {

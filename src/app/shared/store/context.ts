@@ -1,4 +1,4 @@
-import { Dispatch, Reducer } from 'react'
+import { Dispatch } from 'react'
 
 export type PureAction = {
 	type: string;

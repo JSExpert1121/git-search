@@ -3,9 +3,9 @@ import { AppRouter } from './modules';
 import 'assets/styles/index.scss'
 
 const App: React.FC = () => {
-  return (
-    <AppRouter />
-  );
+	return (
+		<AppRouter />
+	);
 }
 
 export default App;
