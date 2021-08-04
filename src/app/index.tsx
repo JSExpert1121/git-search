@@ -1,14 +1,10 @@
 import React from 'react'
-
+import { AppRouter } from './modules';
 import 'assets/styles/index.scss'
 
 const App: React.FC = () => {
   return (
-    <div className="app">
-      <h1>
-				Hello world
-			</h1>
-    </div>
+    <AppRouter />
   );
 }
 
