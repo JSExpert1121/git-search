@@ -6,7 +6,8 @@ export const HomePage: React.FC = () => {
 	const dispatch = useDispatch()
 	useEffect(() => {
 		dispatch(setTitle('Home'))
-	}, [dispatch])
+		// eslint-disable-next-line
+	}, [])
 
 	return (
 		<div className='home'>

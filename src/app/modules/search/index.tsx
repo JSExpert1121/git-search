@@ -6,7 +6,8 @@ export const SearchPage: React.FC = () => {
 	const dispatch = useDispatch()
 	useEffect(() => {
 		dispatch(setTitle('Git-Search'))
-	}, [dispatch])
+		// eslint-disable-next-line
+	}, [])
 
 	return (
 		<div>
