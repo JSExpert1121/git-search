@@ -1,10 +1,10 @@
-import React, { Reducer, useState } from 'react'
-import { ActionType, StoreType } from './context'
-import { useReducerWithMiddleware, functionMiddleWare } from './middleware'
+import React, { Reducer } from 'react'
+import { PureAction, StoreType } from 'app/shared/container/context'
+import { useReducerWithMiddleware, functionMiddleWare } from 'app/shared/container/middleware'
 
 type ContainerProps<S> = {
 	initial: S;
-	reducer: Reducer<S, ActionType>;
+	reducer: Reducer<S, PureAction>;
 	context: React.Context<StoreType<S>>;
 	children: React.ReactNode;
 }

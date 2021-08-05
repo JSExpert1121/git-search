@@ -11,4 +11,4 @@ export interface StoreType<StateType> {
 	dispatch: Dispatch<ActionType>;
 }
 
-export type Middleware = (dispatch: CallableFunction, action: ActionType) => void
+export type Middleware = (dispatch: CallableFunction, action: ActionType) => boolean

@@ -1,14 +1,15 @@
 import React from 'react'
-import { Container } from 'react-bootstrap'
 import { Header } from './header'
 import { Footer } from './footer'
 
 export const BaseLayout: React.FC<React.PropsWithChildren<{}>> = (props) => {
 	return (
-		<Container>
+		<div className='h-100 d-flex flex-column'>
 			<Header />
-			{props.children}
+			<main className='flex-fill'>
+				{props.children}
+			</main>
 			<Footer />
-		</Container>
+		</div>
 	)
 }

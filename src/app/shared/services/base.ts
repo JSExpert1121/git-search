@@ -5,7 +5,7 @@ Axios.interceptors.response.use(
 	error => Promise.reject(error.response)
 )
 
-export default {
+export const RestClient = {
 	get: (url: string, config: AxiosRequestConfig = {}) =>
 		Axios.get(url, config),
 	post: (url: string, data: any, config: AxiosRequestConfig = {}) =>
