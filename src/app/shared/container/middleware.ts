@@ -1,0 +1,27 @@
+import React, { Reducer } from 'react'
+import { ActionType, Middleware, PureAction } from 'app/shared/container/context'
+
+
+export const functionMiddleWare: Middleware = (dispatch, action) => {
+	if (typeof action === 'function') {
+		action(dispatch);
+		return true
+	}
+
+	return false
+}
+
+export function useReducerWithMiddleware<S>(reducer: Reducer<S, PureAction>, initialState: S, middlewares: Middleware[]) {
+	const [state, dispatch] = React.useReducer(reducer, initialState);
+	const dispatchWithMiddleware = (action: ActionType) => {
+		let done = false
+		for (const middleware of middlewares) {
+			done = middleware(dispatch, action)
+			if (done) break
+		}
+
+		if (!done) dispatch(action as PureAction)
+	}
+
+	return { state, dispatch: dispatchWithMiddleware }
+}
