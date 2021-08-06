@@ -2,7 +2,7 @@ import Axios, { AxiosRequestConfig } from 'axios'
 
 Axios.interceptors.response.use(
 	response => response.data,
-	error => Promise.reject(error.response)
+	error => Promise.reject(error)
 )
 
 export const RestClient = {
