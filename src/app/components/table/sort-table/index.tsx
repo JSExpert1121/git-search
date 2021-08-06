@@ -11,14 +11,22 @@ type SortTableProps = {
 	columns: TableColumn[];
 	sort: string;
 	onSort: (title: string, up: boolean) => void;
+	colgroups?: string[];
 	children: React.ReactNode;
 }
 export const SortTable: React.FC<SortTableProps> = (props) => {
 
-	const { columns, children, onSort, sort } = props
+	const { columns, children, onSort, sort, colgroups } = props
 
 	return (
 		<Table className='w-100'>
+			{colgroups && (
+				<colgroup>
+					{colgroups.map((col, idx) => (
+						<col span={1} width={col} key={`col-${idx}`}></col>
+					))}
+				</colgroup>
+			)}
 			<thead>
 				<tr>
 					{columns.map(col => {

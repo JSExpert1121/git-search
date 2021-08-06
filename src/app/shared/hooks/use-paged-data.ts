@@ -21,7 +21,6 @@ export function usePagedSource(
 
 			try {
         const res = await fetchFn({ page, pageSize: pageSize })
-				console.log(res)
         setData(res)
       } catch (error) {
         setError(error.message ?? error.data.message)

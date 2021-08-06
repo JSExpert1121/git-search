@@ -81,6 +81,7 @@ export function DataTable(props: DataTableProps): JSX.Element {
           <SortTable
             onSort={onSort}
             sort={sortKey}
+            colgroups={['30%', '30%', '15%', '25%']}
             columns={[
               { title: 'Name', key: 'name', sortable: true },
               { title: 'Owner', key: 'owner', sortable: true },
