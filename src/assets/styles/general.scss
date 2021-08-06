@@ -46,3 +46,14 @@ h4 {
 .cursor-pointer {
 	cursor: pointer;
 }
+
+.absolute-center {
+  position: absolute;
+  left: calc(50% - 20px);
+  top: 50%;
+}
+
+.error-message {
+	font-size: 0.875rem;
+	color: $color-warning;
+}

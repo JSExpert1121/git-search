@@ -29,12 +29,12 @@ export const AutoPagination: React.FC<AutoPaginationProps> = (props: AutoPaginat
 			pageNo === 0 ? (
 				<Pagination.Ellipsis
 					onClick={() => pageSelect(idx === 0 ? pages[idx + 1] - 1 : pages[pages.length - 2] + 1)}
-					key={pageNo}
+					key={idx}
 				/>
 			) : (
 				<Pagination.Item
 					onClick={() => pageSelect(pageNo)} active={pageNo === page}
-					key={pageNo}
+					key={idx}
 				>
 					{pageNo}
 				</Pagination.Item>
@@ -65,6 +65,7 @@ export const AutoPagination: React.FC<AutoPaginationProps> = (props: AutoPaginat
 
 			setPages(pages)
 		}
+		// eslint-disable-next-line
 	}, [page, viewCount, count])
 
 	const items = useMemo(() => buildPageinationItems(pages), [pages, buildPageinationItems])
